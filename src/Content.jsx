@@ -13,14 +13,13 @@ class Content extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" Component={ Login } />
+        <Route exact path="/" component={ Login } />
         <Route path="/favorites" component={ Favorites } />
         <Route path="/album/:id" component={ Album } />
-        <Route path="/profile" component={ Profile } />
-        <Route path="/profileEdit" component={ ProfileEdit } />
-        <Route path="/profile" component={ Profile } />
+        <Route exact path="/profile" component={ Profile } />
+        <Route exact path="/profile/edit" component={ ProfileEdit } />
         <Route path="/search" component={ Search } />
-        <Route path=" " component={ NotFound } />
+        <Route component={ NotFound } />
       </Switch>
     );
   }
