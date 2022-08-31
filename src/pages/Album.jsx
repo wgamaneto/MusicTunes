@@ -44,7 +44,7 @@ class Album extends React.Component {
     } else {
       this.setState({ loading: true }, async () => {
         await addSong(event);
-        await this.checado();
+        await this.verificado();
         this.setState({ loading: false });
       });
     }
@@ -76,11 +76,11 @@ class Album extends React.Component {
                           Favorita
                           <input
                             data-testid={ `checkbox-music-${element.trackId}` }
-                            type="checkbox"
                             id={ index }
+                            type="checkbox"
                             onClick={ async () => {
-                              await this.verificado();
                               await this.handleHAndleHAndle(element);
+                              await this.verificado();
                             } }
                             defaultChecked={ salvo.length > 0 && (
                               salvo.some((elemento) => elemento.trackName === element
@@ -89,8 +89,8 @@ class Album extends React.Component {
                           />
                         </label>
                         <MusicCard
-                          previewUrl={ element.previewUrl }
                           trackName={ element.trackName }
+                          previewUrl={ element.previewUrl }
                         />
                       </div>
                     )
