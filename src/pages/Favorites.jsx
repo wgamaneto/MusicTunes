@@ -43,20 +43,22 @@ class Favorite extends React.Component {
             <Loading />
           ) : (
             data.map((element, index) => (
-              <div key={ element.artistId } htmlFor={ index }>
-                Favorita
-                <input
-                  data-testid={ `checkbox-music-${element.trackId}` }
-                  type="checkbox"
-                  id={ index }
-                  onClick={ async () => {
-                    await this.handleHandleHAndle(element);
-                    await this.verificado();
-                  } }
-                  checado={ data.length > 0 && (
-                    data.some((elemento) => elemento.trackName === element.trackName)
-                  ) }
-                />
+              <div key={ element.artistId }>
+                <label htmlFor={ index }>
+                  Favorita
+                  <input
+                    data-testid={ `checkbox-music-${element.trackId}` }
+                    type="checkbox"
+                    id={ index }
+                    onClick={ async () => {
+                      await this.handleHandleHAndle(element);
+                      await this.verificado();
+                    } }
+                    defaultChecked={ data.length > 0 && (
+                      data.some((elemento) => elemento.trackName === element.trackName)
+                    ) }
+                  />
+                </label>
                 <MusicCard
                   previewUrl={ element.previewUrl }
                   trackName={ element.trackName }

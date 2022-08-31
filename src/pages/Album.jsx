@@ -71,21 +71,23 @@ class Album extends React.Component {
                 {data.length > 0 && (
                   data.map((element, index) => (
                     index > 0 && (
-                      <div key={ index } htmlFor={ index }>
-                        Favorita
-                        <input
-                          data-testid={ `checkbox-music-${e.trackId}` }
-                          type="checkbox"
-                          id={ index }
-                          onClick={ async () => {
-                            await this.verificado();
-                            await this.handleHAndleHAndle(element);
-                          } }
-                          checado={ salvo.length > 0 && (
-                            salvo.some((elemento) => elemento.trackName === element
-                              .trackName)
-                          ) }
-                        />
+                      <div key={ index }>
+                        <label htmlFor={ index }>
+                          Favorita
+                          <input
+                            data-testid={ `checkbox-music-${element.trackId}` }
+                            type="checkbox"
+                            id={ index }
+                            onClick={ async () => {
+                              await this.verificado();
+                              await this.handleHAndleHAndle(element);
+                            } }
+                            defaultChecked={ salvo.length > 0 && (
+                              salvo.some((elemento) => elemento.trackName === element
+                                .trackName)
+                            ) }
+                          />
+                        </label>
                         <MusicCard
                           previewUrl={ element.previewUrl }
                           trackName={ element.trackName }
