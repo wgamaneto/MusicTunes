@@ -5,8 +5,8 @@ import { getUser } from '../services/userAPI';
 
 class Header extends React.Component {
   state = {
-    user: {},
     loading: false,
+    user: {},
   };
 
   componentDidMount() {
