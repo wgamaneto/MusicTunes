@@ -14,12 +14,12 @@ class Content extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={ Login } />
-        <Route path="/favorites" component={ Favorites } />
-        <Route path="/album/:id" component={ Album } />
+        <Route exact path="/favorites" component={ Favorites } />
+        <Route exact path="/album/:id" component={ Album } />
         <Route exact path="/profile" component={ Profile } />
         <Route exact path="/profile/edit" component={ ProfileEdit } />
-        <Route path="/search" component={ Search } />
-        <Route component={ NotFound } />
+        <Route exact path="/search" component={ Search } />
+        <Route exact path="*" component={ NotFound } />
       </Switch>
     );
   }

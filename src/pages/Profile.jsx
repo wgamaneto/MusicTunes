@@ -29,11 +29,9 @@ class Profile extends React.Component {
             <img
               data-testid="profile-image"
               src={ people.image }
-              alt="adamastor"
+              alt="imagem da pessoa logada"
             />
-            <Link to="/profile/edit">
-              Editar perfil
-            </Link>
+            <Link to="/profile/edit">Editar perfil</Link>
           </>
         )}
         Profile
